@@ -34,6 +34,7 @@ exports.load = function() {
         rssChannel.item.each(function (i, newJobItem){
           var jobPosting = {recordType: 'Job',
             fields: {
+              author: {value: newJobItem.author.text()},
               link: {value: newJobItem.link.text()},
               title: {value: newJobItem.title.text()},
               content: {value: newJobItem.description.text()},
